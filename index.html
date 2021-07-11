@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<div id="app">
+		{{person.name}} -- {{person.age}}
+		{{person.fav}}
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+	    {{msg}}
+	    <div v-text="person.age"></div>
+	    <div v-text="msg"></div>
+	    <div v-html="htmlStr"></div>
+	    <input type="text" v-model="msg">
+	    <button v-on:click="handlerClick">btnon </button>
+	    <button @click="handlerClick">btn@ </button>
+	</div>
+	<script type="text/javascript" src="./Observer.js"></script>
+	<script type="text/javascript" src="./index.js"></script>
+	<script type="text/javascript">
+		let app=new IVue({
+			  el: '#app',
+			  data: {
+			    person: {
+			    	age:18,
+			    	name:'iwen',
+			    	fav:'你好'
+			    },
+			    msg:"好好学习vue实现原理",
+			    htmlStr:'好好学习天天香上'
+			  },
+			  methods:{
+			  	handlerClick(){
+			  		console.log('你好我时规则')
+
+			  		this.$data.person.name="好好学习"
+			  		
+			  		
+			  	}
+			  }
+		})
+	</script>
+</body>
+</html>
